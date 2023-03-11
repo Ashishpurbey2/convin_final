@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import CreateEditPlaylist from "./pages/CreateEditPlaylist";
 import AdminHome from "./pages/Admin/AdminHome";
 import AddEditSong from "./pages/Admin/AddEditSong";
+import History1 from "./pages/History1";
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
@@ -41,6 +42,14 @@ function App() {
                 <Register />
               </PublicRoute>
             }
+          />
+          <Route
+              path="/history1"
+              element={
+                <ProtectedRoute>
+                  <History1/>
+                </ProtectedRoute>
+              }
           />
 
           <Route

@@ -15,7 +15,7 @@ function Player() {
   const audioRef = React.createRef();
   const { currentSong, currentSongIndex, allSongs, isPlaying, currentTime } =
     useSelector((state) => state.user);
-
+  
   const onPlay = () => {
     audioRef.current.play();
     dispatch(SetIsPlaying(true));
@@ -58,7 +58,9 @@ function Player() {
   useEffect(() => {
     if (!currentSong && allSongs.length > 0) {
       dispatch(SetCurrentSong(allSongs[0]));
+      
     }
+ 
   }, [allSongs]);
 
   useEffect(() => {

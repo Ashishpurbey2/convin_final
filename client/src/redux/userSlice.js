@@ -12,7 +12,7 @@ export const userSlice = createSlice({
     selectedPlaylistForEdit : null,
     isPlaying : false,
     currentTime : 0,
-
+    history1:null,
   },
   reducers: {
     SetUser: (state, action) => {
@@ -22,19 +22,25 @@ export const userSlice = createSlice({
       state.allSongs = action.payload;
     },
     SetCurrentSong: (state, action) => {
+      // "2011-04-20T09:30:51.01")
+      var d = new Date();
+      localStorage.setItem("song",localStorage['song']+"%"+action.payload.src+"#"+action.payload.title+"#"+d.getHours()+"#"+d.getMinutes()+"#"+d.getSeconds());
       state.currentSong = action.payload;
+      console.log(action.payload);
     },
     SetCurrentSongIndex: (state, action) => {
       state.currentSongIndex = action.payload;
     },
     SetSelectedPlaylist: (state, action) => {
       state.selectedPlaylist = action.payload;
+      
     },
     SetSelectedPlaylistForEdit: (state, action) => {
       state.selectedPlaylistForEdit = action.payload;
     },
     SetIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
+      
     },
     SetCurrentTime: (state, action) => {
       state.currentTime = action.payload;

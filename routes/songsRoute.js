@@ -19,6 +19,8 @@ router.post("/get-all-songs", authMiddleware, async (req, res) => {
   }
 });
 
+// router.post("/history",authMiddleware,a)
+
 router.post("/add-playlist", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.body.userId);

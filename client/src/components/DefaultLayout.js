@@ -15,6 +15,9 @@ function DefaultLayout({children}) {
                 <h1 className='text-2xl ml-7  cursor-pointer ' onClick={()=>{
                     navigate('/admin')
                 }} >Edit</h1>
+                <h1 className='text-2xl ml-7  cursor-pointer ' onClick={()=>{
+                    navigate('/history1')
+                }} >History</h1>
                 <h1 className='text-xl'>{user?.name.toUpperCase()}</h1>
                 <i className="ri-logout-circle-r-line text-xl cursor-pointer" onClick={()=>{
                     localStorage.removeItem('token')
